@@ -4,4 +4,4 @@
 
 team-members:
   * ishitva - app
-  * subhra  - rontend
+  * subhra  - frontend
