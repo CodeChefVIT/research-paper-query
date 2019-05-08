@@ -1,0 +1,104 @@
+/*-------------------- basic setup -------------------*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    background-color: #343A49;
+    font-weight: 300;
+    font-size: 20px;
+    width: 100%;
+}
+
+/* -----------------------header --------------------*/
+header{
+    /* border-bottom: 2px solid #ffffff; */
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #00C2C7;
+}
+
+h1{
+    font-size: 300%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ----------------------main body------------------ */
+.main{
+    text-align: center;
+    /* border: 1px solid white; */
+    padding-top: 17.2%;
+    padding-bottom: 17.2%;
+    margin-bottom: 0;
+}
+
+#searchbar{
+    width: 40%;
+    height: 45px;
+    border: 0.5px solid #ffffff;
+    border-radius: 20px;
+    background-color: #FCE27D;
+    margin: 0;
+}
+
+#searchbar::placeholder{
+    color: #000000;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* --------------- footer ----------------------- */
+footer{
+    background-color: #161514;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 1%;
+    text-align: center;
+    margin-top: 0;
+}
+
+#footer-nav{
+    float: left;
+    list-style: none;
+}
+#footer-nav li{
+    display: inline-block;
+    padding: 5px 40px;
+}
+
+#footer-nav li a{
+    color: #19F600;
+}
+
+#social-links{
+    float: right;
+    list-style: none;
+}
+
+#social-links li{
+    display: inline-block;
+    padding: 5px 40px;
+}
+
+#social-links li:nth-of-type(1) a{
+    color: rgb(21, 9, 194);
+}
+
+#social-links li:nth-of-type(2) a{
+    color: #00C2C7;
+}
+
+#social-links li:nth-of-type(3) a{
+    color: rgb(224, 136, 3);
+}
+
+footer p{
+    display: inline;
+    color: #ffffff;
+    margin-left: 0;
+}
