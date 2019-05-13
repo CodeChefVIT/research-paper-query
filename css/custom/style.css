@@ -15,7 +15,7 @@ body{
 
 /* -----------------------header --------------------*/
 header{
-    /* border-bottom: 2px solid #ffffff; */
+    
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -29,24 +29,29 @@ h1{
 
 /* ----------------------main body------------------ */
 .main{
+    margin: 15% auto;
+    padding: 0 ;
+    width: 50%;
     text-align: center;
-    /* border: 1px solid white; */
-    padding-top: 17.2%;
-    padding-bottom: 17.2%;
-    margin-bottom: 0;
 }
 
 #searchbar{
-    width: 40%;
+    width: 70%;
     height: 45px;
     border: 0.5px solid #ffffff;
     border-radius: 20px;
-    background-color: #FCE27D;
-    margin: 0;
+    background-color: #fff;
+    padding: 2.5%; 
+    outline: none;
+}
+
+#searchbar:hover,
+#searchbar:active{
+    background: rgba(241, 230, 230, 0.925);
 }
 
 #searchbar::placeholder{
-    color: #000000;
+    color: rgb(0, 0, 0);
     font-weight: 400;
     text-align: center;
 }
@@ -57,7 +62,7 @@ footer{
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding-bottom: 1%;
+    padding-top: 1.5%;
     text-align: center;
     margin-top: 0;
 }
@@ -68,7 +73,7 @@ footer{
 }
 #footer-nav li{
     display: inline-block;
-    padding: 5px 40px;
+    padding: 0px 40px;
 }
 
 #footer-nav li a{
@@ -82,7 +87,7 @@ footer{
 
 #social-links li{
     display: inline-block;
-    padding: 5px 40px;
+    padding: 0px 40px;
 }
 
 #social-links li:nth-of-type(1) a{
@@ -97,8 +102,23 @@ footer{
     color: rgb(224, 136, 3);
 }
 
-footer p{
-    display: inline;
-    color: #ffffff;
-    margin-left: 0;
+#footer-nav li a:hover,
+#social-links li:nth-of-type(1) a:hover,
+#social-links li:nth-of-type(2) a:hover,
+#social-links li:nth-of-type(3) a:hover{
+    text-decoration: none;
+    color: white;
 }
+
+footer p{
+    display: inline-block;
+    width: 100%;
+    color: #ffffff;
+    margin-bottom: 1%;
+    letter-spacing: 1px;
+}
+
+footer p:hover{
+    color: rgb(238, 255, 2);
+}
+
