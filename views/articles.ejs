@@ -1,0 +1,11 @@
+<h1>Articles found on: <%=searchTerm %></h1>
+
+<% articles.forEach((article) => { %>
+    <div>
+        <li>
+            <div>   <h3><%= article["title"] %></h3>                    </div>
+            <div>   <%= article["abstract"].substr(0,150) %>             </div>
+            <div>   <a href="/articles/<%= article['doi']%>">click</a>  </div>
+        </li>
+    </div>
+<% }) %>
