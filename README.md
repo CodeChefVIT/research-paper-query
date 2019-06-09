@@ -1,25 +1,39 @@
 # Research paper query
 
-An app and a website to fetch and download research papers based on user demand. Research papers need to be IEEE and can be fetched from websites like Scihub.
+An app and a website to fetch and download [IEEE](https://developer.ieee.org/) research papers from [scihub](http://sci-hub.tw/) based on user demand.
 
 ### Team members
-  * Subhra (frontend) [![linkedIn](https://img.shields.io/badge/contact%20me-linkedIn-green.svg?style=for-the-badge&logo=appveyor)](https://www.linkedin.com/in/subhra-paladhi-946aaa137/)
+  * Subhra Paladhi(web app) [![linkedIn](https://img.shields.io/badge/contact%20me-linkedIn-green.svg?style=for-the-badge&logo=appveyor)](https://www.linkedin.com/in/subhra-paladhi-946aaa137/)
   * Ishitva (app) 
 
 ### Tools used
   * Visual Studio Code
   * Adobe Xd
   
-### Frameworks and programming languages used
+### Frameworks, libraries and programming languages used
   * HTML5
-  * CSS3
-  * Bootstrap 4
   * node js
+  * selenium
+  <br> View [package.json](./package.json) for more details
   
-### Testing environment
-  * Google Chrome Version 74.0.3729.131 (Official Build) (64-bit)
+### Requirements
+  * Google Chrome Version 75.0.3770.80 (Official Build) (64-bit)
+  * node >= v11.9.0
+  * body-parser >= v1.19.0
+  * ejs >= 2.6.1
+  * express >= v4.17.1
+  * open >= v6.3.0
+  * request >= v2.88.0
+  * selenium-webdriver >= v4.0.0-alpha.1
   
-### Project Instructions
-  * Run index.html file using a browser to use the webpage
-  * Run frontpage-prototype.xd using Adobe.xd to see the prototype of the webpage
+### Installation
+  ```bash
+  npm install
+  ```
   
+### Running
+  ```bash
+  node app.js
+  ```
+  - Then goto "https://localhost:3000"
+  - Use Google Chrome Version 75.0.3770.80 (Official Build) (64-bit) or later as default browser for best performance

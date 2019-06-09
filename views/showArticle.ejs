@@ -1,0 +1,97 @@
+<% include partials/header.ejs %>
+
+    <style>
+        
+        .ui.container{
+            background: rgba(0,0,0,0.65);
+            width: 60%;
+            margin-top: 1%;
+            padding: 2%;
+        }
+
+        .ui.container #abstractHeading{
+            color: aliceblue;
+            margin-left: 5%;
+        }
+
+        .ui.container.abstract{
+            width: 90%;
+        }
+        
+        #links{
+            background: rgba(0,0,0,0.40);
+            height: 45px;
+            box-shadow: 0px 2px rgb(7, 153, 238);
+        }
+
+        .link-text{
+            visibility: hidden;
+            color: rgb(7, 153, 238);
+            font-size: 75%;
+            transition: visibility 1s;
+        }
+
+        #links:hover .link-text{
+            color: rgb(7, 153, 238);
+            font-size: 75%;
+            visibility: visible;
+        }
+
+        #back-button,
+        #download-button{
+            width: 49.5%;
+            text-align: center;
+            margin: 1% 0;
+           
+        }
+
+        #back-button{
+            float: left;         
+            box-shadow: 2px 0px rgb(240, 191, 191);   
+        }
+    
+        #download-button{
+            display: inline-block;
+            box-shadow: -2px 0px #fff;
+        }
+
+        #download-button a i,
+        #back-button a i{
+            color:rgb(238, 97, 16);
+            font-size: 150%;
+        }
+
+        #abstract-content{
+            margin-top: 2%;
+            padding: 1% 3%;
+            color: rgb(0, 255, 13);
+            text-align: justify;
+            word-spacing: 2px;
+            letter-spacing: 0.8px;
+        }
+
+    </style>
+
+    <div class="ui container">
+        <h1 id="abstractHeading"><span style="color: rgb(5, 194, 252)">Abstract</span> : <%= article['title'] %></h1>
+        
+        <div class="ui container abstract">
+
+            <div id="links">
+
+                <div id="back-button" class="tooltip">
+                    <a href="/articles"><i class="angle left icon"></i><span class="link-text">Back</span></a>
+                </div>
+                <div id="download-button">
+                    <a href="/articles/<%= article['doi'] %>/download"><i class="download icon"></i><span class="link-text">download</span></a>
+                </div>
+
+            </div>
+
+            <p id="abstract-content"><%= article['abstract'] %></p>          
+            
+        </div>
+        
+    </div>
+    
+<% include partials/footer.ejs %>

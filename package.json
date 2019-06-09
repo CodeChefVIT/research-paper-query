@@ -1,0 +1,19 @@
+{
+  "name": "research_paper_query",
+  "version": "3.0.0",
+  "description": "An app and a website to fetch and download research papers based on user demand. Research papers need to be IEEE and can be fetched from websites like Scihub.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pseudorandom_guy",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "open": "^6.3.0",
+    "request": "^2.88.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}
