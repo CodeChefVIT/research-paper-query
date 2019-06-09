@@ -37,10 +37,3 @@ An app and a website to fetch and download [IEEE](https://developer.ieee.org/) r
   ```
   - Then goto "https://localhost:3000"
   - Use Google Chrome Version 75.0.3770.80 (Official Build) (64-bit) or later as default browser for best performance
-  
- ### Remaining tasks
-  - [ ] Adding support for mozila
-  - [ ] Adding support for interner explorer
-  - [ ] Adding support for Edge
-  - [ ] Adding a abstract page
-  - [ ] Styling the pages

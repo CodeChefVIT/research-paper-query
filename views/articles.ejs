@@ -1,11 +1,46 @@
-<h1>Articles found on: <%=searchTerm %></h1>
+<% include partials/header.ejs %>
+    
+    <style>
 
-<% articles.forEach((article) => { %>
-    <div>
-        <li>
-            <div>   <h3><%= article["title"] %></h3>                    </div>
-            <div>   <%= article["abstract"].substr(0,150) %>             </div>
-            <div>   <a href="/articles/<%= article['doi']%>">click</a>  </div>
-        </li>
+        .ui.container{
+            width: 90%;
+            margin-top: 25px;
+            padding: 2%;
+            border: 1px solid black;
+            background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65));
+            background-attachment: fixed;
+            margin-bottom: 1%;
+        }
+    
+        #heading{
+            margin: 1% 0% 1% 5%;
+            color: rgb(8, 167, 230);
+            font-size: 300%;
+        }
+        .ui.container.Article{
+            color: white;
+            background-image: linear-gradient(rgba(85, 81, 81, 0.096),rgba(85, 81, 81, 0.096));
+            background-attachment: scroll;
+        }
+
+        .ui.container.Article .article-title h3{
+            color: #f0f;
+            text-align: center;
+            font-size: 150%;
+        }
+        
+
+
+    </style>
+
+    <div class="ui container">
+        <h1 id="heading">Articles found on: <span style="color: rgb(56, 170, 11); text-decoration: underline"><%=searchTerm %></span></h1>
+        <% articles.forEach((article) => { %>
+            <div class="ui container Article">
+                    <div class="article-title"> <h3><%= article['title'] %></h3>                           </div>
+                    <div class=" ui container article-des">   <%= article['abstract'].substr(0,250) %> . . . . . . . . . <a href="/articles/<%=article['doi']%>">Read More</a></div>
+            </div>
+        <% }) %>
     </div>
-<% }) %>
+
+<% include partials/footer.ejs %>

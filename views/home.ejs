@@ -1,6 +1,74 @@
-<h1>home page</h1>
+<% include partials/header.ejs%>
+    
+    <style>
+        
+        .ui.container{
+            margin-top: 10%;
+            padding: 0;
+            height: 50%;
+            background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5));
+        }
 
-<form action="/" method="POST">
-    <input type="text" name="articleName" placeholder="search research papers">
-    <button>Search</button>
-</form>
+        .ui.container .ui.form{
+            margin: 0 10%;
+            width: 80%;
+            padding: 0;
+            padding-top: 15%;
+        }
+
+        .ui.container #searchBox{
+            background: #ffffff;
+            width: 80%;
+            margin: 0 10%;
+            padding: 0.5%;
+            height: 14%;
+            border-radius: 20px;
+            border: 2px solid #000000;
+        }
+
+        .ui.form .field{
+            float: left;
+            width: 90%;
+            margin: 0%;
+            height: 100%;
+            
+        }
+
+        .ui.form .field input{
+            width: 100%;
+            height: 100%;
+            padding: 0 5%;
+            border: none;
+            font-size: 150%;
+        }
+
+        .ui.form .submit{
+            width: 10%;
+            height: 40px;
+            display: inline-block;
+            padding-left: 2.5%;
+        }
+
+        .ui.form i{
+            color: aliceblue;
+            font-size: 150%;
+        }
+
+    </style>
+
+    <div class="ui container">
+
+        <form action="/" method="POST" class="ui form">
+            <div id="searchBox">
+                <div class="field">
+                        <input type="text" name="articleName" placeholder="search research papers">
+                </div>
+                <div class="submit">
+                        <label for="submitButton"><i class="inverted circular search link icon"></i></label>
+                        <button type="submit" id="submitButton" style="visibility: hidden">submit</button>
+                </div>
+            </div>            
+        </form>
+    </div>
+
+<%include partials/footer.ejs%>
