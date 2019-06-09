@@ -14,7 +14,7 @@ An app and a website to fetch and download [IEEE](https://developer.ieee.org/) r
   * HTML5
   * node js
   * selenium
-  View [package.json](./package.json) for more details
+  <br> View [package.json](./package.json) for more details
   
 ### Requirements
   * Google Chrome Version 75.0.3770.80 (Official Build) (64-bit)
