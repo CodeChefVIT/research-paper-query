@@ -14,7 +14,8 @@ An app and a website to fetch and download [IEEE](https://developer.ieee.org/) r
   * HTML5
   * node js
   * selenium
-  <br> View [package.json](./package.json) for more details
+  * semantic ui
+  View [package.json](./package.json) for more details
   
 ### Requirements
   * Google Chrome Version 75.0.3770.80 (Official Build) (64-bit)
@@ -25,11 +26,13 @@ An app and a website to fetch and download [IEEE](https://developer.ieee.org/) r
   * open >= v6.3.0
   * request >= v2.88.0
   * selenium-webdriver >= v4.0.0-alpha.1
+  * chromewebdriver.exe
   
 ### Installation
   ```bash
   npm install
   ```
+  For chromewebdriver.exe : [Download link](http://chromedriver.chromium.org/downloads)
   
 ### Running
   ```bash
