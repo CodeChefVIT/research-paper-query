@@ -26,43 +26,29 @@
 
         .link-text{
             visibility: hidden;
-            color: rgb(7, 153, 238);
-            font-size: 75%;
-            transition: visibility 1s;
+            font-size: 100%;
+            transition: visibility 0.5s;
         }
 
         #links:hover .link-text{
             color: rgb(7, 153, 238);
-            font-size: 75%;
+            font-size: 100%;
             visibility: visible;
         }
 
-        #back-button,
-        #download-button{
-            width: 49.5%;
+        #links span.eight.wide.column{
             text-align: center;
-            margin: 1% 0;
-           
+            padding: 1% 0;
         }
 
-        #back-button{
-            float: left;         
-            box-shadow: 2px 0px rgb(240, 191, 191);   
-        }
-    
-        #download-button{
-            display: inline-block;
-            box-shadow: -2px 0px #fff;
-        }
-
-        #download-button a i,
-        #back-button a i{
-            color:rgb(238, 97, 16);
-            font-size: 150%;
+        .eight.wide.column i{
+            color: rgb(255, 136, 0);
+            font-size: 125%;
+            padding: 0;
         }
 
         #abstract-content{
-            margin-top: 2%;
+            margin-top: 4%;
             padding: 1% 3%;
             color: rgb(0, 255, 13);
             text-align: justify;
@@ -77,15 +63,13 @@
         
         <div class="ui container abstract">
 
-            <div id="links">
-
-                <div id="back-button" class="tooltip">
+            <div id="links" class="ui grid">
+                <span class="eight wide column" style="border-right: 2px solid #fff">
                     <a href="/articles"><i class="angle left icon"></i><span class="link-text">Back</span></a>
-                </div>
-                <div id="download-button">
-                    <a href="/articles/<%= article['doi'] %>/download"><i class="download icon"></i><span class="link-text">download</span></a>
-                </div>
-
+                </span>
+                <span class="eight wide column">
+                    <a href="/articles/<%= article['doi'] %>/download"><i class="download icon"></i><span class="link-text">Download</span></a>
+                </span>
             </div>
 
             <p id="abstract-content"><%= article['abstract'] %></p>          
