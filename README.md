@@ -38,5 +38,5 @@ An app and a website to fetch and download [IEEE](https://developer.ieee.org/) r
   ```bash
   node app.js
   ```
-  - Then goto "https://localhost:3000"
+  - Then goto "http://localhost:3000"
   - Use Google Chrome Version 75.0.3770.80 (Official Build) (64-bit) or later as default browser for best performance
