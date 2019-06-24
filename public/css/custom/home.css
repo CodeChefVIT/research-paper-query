@@ -64,7 +64,7 @@
     border: none;
 }
 .ui.container #submitButton:focus{
-    border: 0.5px transparent;
+    background: rgba(0, 0, 0, 0.5);
     outline: none;
 }
 
