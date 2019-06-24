@@ -1,45 +1,10 @@
 <html>
     <head>
         <title>Research Paper Query</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="/css/Semantic-UI-CSS-master/semantic.min.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu:300i,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/custom/header.css">
     </head>
-
-    <style>
-        body{
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            font-size: 20px;
-            background-image: url("/images/bg2.jpg");
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            font-family: 'Ubuntu', sans-serif;
-        }
-
-        .ui.top.attached.menu{
-            background: rgb(5, 194, 252);
-        }
-
-        .ui.top.attached.menu .right.menu .item .headerForm{
-            box-sizing: border-box;
-            margin: 0;
-        }
-
-        .headerForm .ui.icon.input input{
-            border: 2px solid #000000;
-        }
-
-        .ui.header{
-            color: #680e83;
-        }
-
-        .ui.header:hover{
-            color: #000000;
-        }
-        
-    </style>
 
     <body>
         <div class="ui top attached  menu">
@@ -59,9 +24,7 @@
                     <form action="/" method="POST" class="headerForm" style="background: rgb(255, 255, 255)">
                         <div class="ui icon input">
                             <input type="text" placeholder="Search..." name="articleName">
-                            <label for="submitButton" style="margin: 0; padding: 1%; width: 7%; "><i class="inverted circular search link icon"></i></label>
-                            
-                            <button type="submit" id="submitButton" style="visibility: hidden"></button>
+                            <button type="submit" id="submitButton" ><i class="inverted circular search link icon"></i></button>
                         </div>
                     </form>
                 </div>

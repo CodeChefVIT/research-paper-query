@@ -1,66 +1,6 @@
 <% include partials/header.ejs%>
-    
-    <style>
-        
-        .ui.container{
-            margin-top: 10%;
-            padding: 0;
-            height: 50%;
-            background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5));
-            padding: 1%;
-            
-        }
 
-        .ui.form{
-            margin: 12% auto;
-            width: 80%;
-            height: 15%;
-            padding: 0;
-            border-radius: 30px;
-            background: rgb(210, 240, 128);
-        }
-
-        .fourteen.wide.column.input{
-            height: 100%;
-            margin: 0;
-            padding: 0%;
-        }
-        .ui.container .input input{
-            margin: 0;
-            height: 100%;
-            width: 100%;
-            font-size: 150%;
-            color: rgb(15, 14, 14);
-            border-radius: 30px;
-            border: 3px solid black;
-            background: transparent;
-        }
-        .ui.container .input input::placeholder{
-            color: rgb(7, 7, 7);
-            text-align: center;
-            font-weight: 600;
-            font-size: 120%;
-        }
-        .ui.container .input input:focus{
-            border-radius: 30px;
-            background: rgb(59, 59, 61);
-            color: #fff;
-        }
-
-        .two.wide.column.submit{
-            margin: 0;
-            padding: 1% 1%;
-            height: 100%;
-            text-align: center;
-            box-sizing: border-box;
-            font-size: 150%;
-        }
-        .two.wide.column.submit button{
-            height: 0;
-            width: 0;
-        }
-
-    </style>
+    <link rel="stylesheet" href="/css/custom/home.css">
 
     <div class="ui container">
 
@@ -69,21 +9,9 @@
                 <input type="text" name="articleName" placeholder="search research papers">
             </div>
             <div class="two wide column submit">
-                <label for="submitButton"><i class="inverted circular search link icon"></i></label>
-                <button type="submit" id="submitButton" style="visibility: hidden">submit</button>
+                <button type="submit" id="submitButton" ><i class="inverted circular search link icon"></i></button>
             </div>
-                   
         </form>
     </div>
 
 <%include partials/footer.ejs%>
-
-<!-- <div id="searchBox ui grid">
-    <div class="field twelve wide column">
-            <input type="text" name="articleName" placeholder="search research papers">
-    </div>
-    <div class="submit four wide column">
-            <label for="submitButton"><i class="inverted circular search link icon"></i></label>
-            <button type="submit" id="submitButton" style="visibility: hidden">submit</button>
-    </div>
-</div>      -->

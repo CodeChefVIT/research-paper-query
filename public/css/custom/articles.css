@@ -1,0 +1,49 @@
+.ui.container{
+    width: 90%;
+    margin-top: 25px;
+    padding: 2%;
+    border: 1px solid black;
+    background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65));
+    background-attachment: fixed;
+    margin-bottom: 1%;
+}
+
+#heading{
+    margin: 1% 0% 1% 5%;
+    color: rgb(8, 167, 230);
+    font-size: 300%;
+}
+
+#heading span{
+    color: rgb(56, 170, 11); 
+    text-decoration: underline
+}
+
+.ui.container.Article{
+    color: white;
+    background-image: linear-gradient(rgba(85, 81, 81, 0.096),rgba(85, 81, 81, 0.096));
+    background-attachment: scroll;
+}
+
+.ui.container.Article .article-title h3{
+    color: #f0f;
+    margin-left: 5%;
+    font-size: 150%;
+}
+
+#backButton{
+    margin-left: 90%;
+    height: 5%;
+}
+
+.thumbs.down.outline.icon{
+    font-size: 300%;
+    text-align: center;
+    margin: 2.5% 47%;
+    color: rgb(233, 33, 33);
+}
+#notFound{
+    color: rgb(233, 33, 33);
+    text-align: center;
+    font-size: 300%;
+}
