@@ -1,0 +1,43 @@
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    background-image: url("/images/bg2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.ui.top.attached.menu{
+    background: rgb(5, 194, 252);
+}
+
+.ui.header{
+    color: #680e83;
+}
+
+.ui.header:hover{
+    color: #000000;
+}
+
+.ui.top.attached.menu .right.menu .item .headerForm{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.headerForm .ui.icon.input input{
+    border: 2px solid #000000;
+}
+.headerForm .ui.icon.input input:focus,
+.headerForm .ui.icon.input input:hover{
+    border: 2px solid #534e4e;
+    background: rgb(209, 250, 133);
+}
+
+.headerForm .ui.icon.input button{
+    background: transparent;
+    border: 2px solid #000000;
+    border-left: none;
+}

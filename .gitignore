@@ -3,3 +3,6 @@ chromedriver.exe
 
 #Ignore node_modules folder
 node_modules
+
+#Ignore semantic ui
+Semantic-UI-CSS-master
