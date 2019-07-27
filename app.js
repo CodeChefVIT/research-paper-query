@@ -24,7 +24,7 @@ app.get('/', (req,res) => {
 app.post('/', (req,res) => {        
     searchTerm = req.body.articleName
     if(searchTerm!=''){
-        var apiUrl = `http://ieeexploreapi.ieee.org/api/v1/search/articles?apikey=9bhdjqu9tzebjdm5xjr9p6xw&format=json&max_records=10&start_record=1&sort_order=asc&sort_field=article_number&abstract=${searchTerm}`
+        var apiUrl = `http://ieeexploreapi.ieee.org/api/v1/search/articles?apikey=9bhdjqu9tzebjdm5xjr9p6xw&format=json&max_records=4&start_record=1&sort_order=asc&sort_field=article_number&abstract=${searchTerm}`
         request(apiUrl, (error, response, resBody) => {
             found = false
             if(!error && response.statusCode==200){
