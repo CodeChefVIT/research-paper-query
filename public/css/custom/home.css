@@ -1,6 +1,5 @@
 .ui.container{
     margin-top: 10%;
-    padding: 0;
     height: 50%;
     background-image: linear-gradient(rgb(0,0,0,0),rgb(0,0,0,0.3));
     padding: 1%;
@@ -22,7 +21,7 @@
 .fourteen.wide.column.input{
     height: 100%;
     margin: 0;
-    padding: 0%;
+    padding: 0;
 }
 .ui.container .input input{
     margin: 0;
