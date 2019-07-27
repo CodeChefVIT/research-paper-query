@@ -77,7 +77,8 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     //         res.redirect('/articles')
     //     })
     //     res.redirect(`/articles/${doi}`)
-        open(url)
+    
+        res.redirect(url)
 })
 
 app.listen(port,()=> console.log('server connected to PORT: 3000'))
