@@ -8,14 +8,14 @@
             <% articles.forEach((article) => { %>
                 <div class="ui container Article">
                         <div class="article-title"> <h3><%= article['title'] %></h3></div>
-                        <div class=" ui container article-des"><%= article['abstract'].substr(0,250) %> . . . . . . . . . <a href="/articles/<%=article['doi']%>">Read More</a></div>
+                        <div class=" ui container article-des"><%= article['abstract'].substr(0,250) %> . . . . . . . . . <a style="color: rgb(5, 194, 252)" href="/articles/<%=article['doi']%>">Read More</a></div>
                 </div>
             <% }) %>
         <%} else{ %>
             <i class="thumbs down outline icon"></i>
             <h2 id="notFound">No articles found!!!</h2>
         <% } %>
-        <a href="/" id="backButton" class="ui compact labeled icon orange button"><i class="angle left icon"></i>Back</a>
+        <a href="/" id="backButton" class="ui compact labeled icon blue button" ><i class="angle left icon"></i>Back</a>
     </div>
 
 <% include partials/footer.ejs %>

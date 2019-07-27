@@ -1,7 +1,8 @@
 .ui.container{
     margin-top: 10%;
+    padding: 0;
     height: 50%;
-    background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5));
+    background-image: linear-gradient(rgb(0,0,0,0),rgb(0,0,0,0.3));
     padding: 1%;
     
 }
@@ -12,7 +13,7 @@
     height: 15%;
     padding: 0;
     border-radius: 30px;
-    background: rgb(255, 152, 56);
+    background: rgba(241, 225, 209,0.4);
 }
 
 
@@ -21,7 +22,7 @@
 .fourteen.wide.column.input{
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0%;
 }
 .ui.container .input input{
     margin: 0;
@@ -42,8 +43,8 @@
 .ui.container .input input:focus,
 .ui.container .input input:hover{
     border-radius: 30px;
-    background: rgb(165, 253, 219);
-    border: 3px solid rgb(29, 177, 245);
+    background: rgba(198, 236, 222,0.3);
+    border: 3px solid rgba(65, 67, 68, 0.7);
     color: rgb(20, 19, 19);
 }
 
@@ -64,7 +65,7 @@
     border: none;
 }
 .ui.container #submitButton:focus{
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0,0,0,0.3);
     outline: none;
 }
 

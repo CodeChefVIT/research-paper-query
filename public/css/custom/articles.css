@@ -3,30 +3,30 @@
     margin-top: 25px;
     padding: 2%;
     border: 1px solid black;
-    background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65));
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
     background-attachment: fixed;
     margin-bottom: 1%;
 }
 
 #heading{
-    margin: 1% 0 1% 5%;
-    color: rgb(8, 167, 230);
+    margin: 1% 0% 1% 5%;
+    color: rgb(0, 0, 0);
     font-size: 300%;
 }
 
 #heading span{
-    color: rgb(56, 170, 11); 
+    color: rgb(127, 223, 247); 
     text-decoration: underline
 }
 
 .ui.container.Article{
-    color: white;
-    background-image: linear-gradient(rgba(85, 81, 81, 0.096),rgba(85, 81, 81, 0.096));
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(rgba(85, 81, 81, 0),rgba(85, 81, 81, 0));
     background-attachment: scroll;
 }
 
 .ui.container.Article .article-title h3{
-    color: #f0f;
+    color: rgb(2, 2, 2);
     margin-left: 5%;
     font-size: 150%;
 }
@@ -34,6 +34,8 @@
 #backButton{
     margin-left: 90%;
     height: 5%;
+    padding: 1%;
+    background: rgb(0, 176, 230)
 }
 
 .thumbs.down.outline.icon{
