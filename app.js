@@ -80,27 +80,27 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     //     })
     //     res.redirect(`/articles/${doi}`)
 
-        let options = new chrome.Options();
-        //Below arguments are critical for Heroku deployment
-        options.addArguments("--headless");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--no-sandbox");
+        // let options = new chrome.Options();
+        // //Below arguments are critical for Heroku deployment
+        // options.addArguments("--headless");
+        // options.addArguments("--disable-gpu");
+        // options.addArguments("--no-sandbox");
 
-        let driver = new webdriver.Builder()
-        .forBrowser('chrome')
-        .setChromeOptions(options)
-        .build();
+        // let driver = new webdriver.Builder()
+        // .forBrowser('chrome')
+        // .setChromeOptions(options)
+        // .build();
     
-        driver.get(url)
-        .then(() => {
-            driver.findElement(By.partialLinkText('save')).click()
-        })
-        .catch((err) => {
-            res.redirect(url)
-            res.redirect('/articles')
-        })
-        res.redirect(`/articles/${doi}`)
-        // res.redirect(url)
+        // driver.get(url)
+        // .then(() => {
+        //     driver.findElement(By.partialLinkText('save')).click()
+        // })
+        // .catch((err) => {
+        //     res.redirect(url)
+        //     res.redirect('/articles')
+        // })
+        // res.redirect(`/articles/${doi}`)
+        res.redirect(url)
 })
 
 app.listen(port,()=> console.log('server connected to PORT: 3000'))
