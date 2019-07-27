@@ -4,7 +4,8 @@
   "description": "An app and a website to fetch and download research papers based on user demand. Research papers need to be IEEE and can be fetched from websites like Scihub.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "pseudorandom_guy",
   "license": "ISC",
@@ -15,5 +16,8 @@
     "open": "^6.3.0",
     "request": "^2.88.0",
     "selenium-webdriver": "^4.0.0-alpha.1"
-  }
+  },
+    "engines": {
+      "node": "11.9.0"
+    }
 }
