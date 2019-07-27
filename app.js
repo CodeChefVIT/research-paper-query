@@ -3,7 +3,9 @@ var express         = require("express"),
     bodyParser      = require("body-parser"),
     open            = require("open"),
     app             = express(),
-    {Builder, By}   = require("selenium-webdriver")
+    // {Builder, By}   = require("selenium-webdriver"),
+    webdriver = require('selenium-webdriver'),
+    chrome = require('selenium-webdriver/chrome')
 const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -77,8 +79,28 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     //         res.redirect('/articles')
     //     })
     //     res.redirect(`/articles/${doi}`)
+
+        let options = new chrome.Options();
+        //Below arguments are critical for Heroku deployment
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
+
+        let driver = new webdriver.Builder()
+        .forBrowser('chrome')
+        .setChromeOptions(options)
+        .build();
     
-        res.redirect(url)
+        driver.get(url)
+        .then(() => {
+            driver.findElement(By.partialLinkText('save')).click()
+        })
+        .catch((err) => {
+            // res.redirect(url)
+            res.redirect('/articles')
+        })
+        res.redirect(`/articles/${doi}`)
+        // res.redirect(url)
 })
 
 app.listen(port,()=> console.log('server connected to PORT: 3000'))
