@@ -65,18 +65,19 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
     var url = `http://sci-hub.tw/${doi}`
 
-    var driver = new Builder()
-            .forBrowser('chrome')
-            .build()
-    driver.get(url)
-        .then(() => {
-            driver.findElement(By.partialLinkText('save')).click()
-        })
-        .catch((err) => {
-            open(url)
-            res.redirect('/articles')
-        })
-        res.redirect(`/articles/${doi}`)
+    // var driver = new Builder()
+    //         .forBrowser('chrome')
+    //         .build()
+    // driver.get(url)
+    //     .then(() => {
+    //         driver.findElement(By.partialLinkText('save')).click()
+    //     })
+    //     .catch((err) => {
+    //         open(url)
+    //         res.redirect('/articles')
+    //     })
+    //     res.redirect(`/articles/${doi}`)
+        open(url)
 })
 
 app.listen(port,()=> console.log('server connected to PORT: 3000'))
