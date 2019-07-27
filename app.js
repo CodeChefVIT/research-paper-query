@@ -4,7 +4,7 @@ var express         = require("express"),
     open            = require("open"),
     app             = express(),
     {Builder, By}   = require("selenium-webdriver")
-
+const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}))
 
 var publicDir = require('path').join(__dirname,'/public');
@@ -79,4 +79,4 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
         res.redirect(`/articles/${doi}`)
 })
 
-app.listen(3000,()=> console.log('server connected to PORT: 3000'))
+app.listen(port,()=> console.log('server connected to PORT: 3000'))
