@@ -3,10 +3,8 @@ var express         = require("express"),
     bodyParser      = require("body-parser"),
     open            = require("open"),
     app             = express(),
-    {Builder, By}   = require("selenium-webdriver"),
-    webdriver = require('selenium-webdriver'),
-    chrome = require('selenium-webdriver/chrome')
-const port = process.env.PORT || 3000;
+    {Builder, By}   = require("selenium-webdriver")
+    var Xvfb = require('xvfb');
 app.use(bodyParser.urlencoded({extended: true}))
 
 var publicDir = require('path').join(__dirname,'/public');
@@ -26,7 +24,7 @@ app.get('/', (req,res) => {
 app.post('/', (req,res) => {        
     searchTerm = req.body.articleName
     if(searchTerm!=''){
-        var apiUrl = `http://ieeexploreapi.ieee.org/api/v1/search/articles?apikey=9bhdjqu9tzebjdm5xjr9p6xw&format=json&max_records=4&start_record=1&sort_order=asc&sort_field=article_number&abstract=${searchTerm}`
+        var apiUrl = `http://ieeexploreapi.ieee.org/api/v1/search/articles?apikey=9bhdjqu9tzebjdm5xjr9p6xw&format=json&max_records=10&start_record=1&sort_order=asc&sort_field=article_number&abstract=${searchTerm}`
         request(apiUrl, (error, response, resBody) => {
             found = false
             if(!error && response.statusCode==200){
@@ -67,40 +65,29 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
     var url = `http://sci-hub.tw/${doi}`
 
-    // var driver = new Builder()
-    //         .forBrowser('chrome')
-    //         .build()
-    // driver.get(url)
-    //     .then(() => {
-    //         driver.findElement(By.partialLinkText('save')).click()
-    //     })
-    //     .catch((err) => {
-    //         open(url)
-    //         res.redirect('/articles')
-    //     })
-    //     res.redirect(`/articles/${doi}`)
-
-        // let options = new chrome.Options();
-        // //Below arguments are critical for Heroku deployment
-        // options.addArguments("--headless");
-        // options.addArguments("--disable-gpu");
-        // options.addArguments("--no-sandbox");
-
-        // let driver = new webdriver.Builder()
-        // .forBrowser('chrome')
-        // .setChromeOptions(options)
-        // .build();
     
-        // driver.get(url)
-        // .then(() => {
-        //     driver.findElement(By.partialLinkText('save')).click()
-        // })
-        // .catch((err) => {
-        //     res.redirect(url)
-        //     res.redirect('/articles')
-        // })
-        // res.redirect(`/articles/${doi}`)
-        res.redirect(url)
+var xvfb = new Xvfb();
+xvfb.startSync();
+ 
+// code that uses the virtual frame buffer here
+ 
+
+// the Xvfb is stopped
+
+    var driver = new Builder()
+            .forBrowser('chrome')
+            .build()
+    driver.get(url)
+        .then(() => {
+            driver.findElement(By.partialLinkText('save')).click()
+            xvfb.stopSync();
+        })
+        .catch((err) => {
+            open(url)
+            res.redirect('/articles')
+            xvfb.stopSync();
+        })
+        res.redirect(`/articles/${doi}`)
 })
 
-app.listen(port,()=> console.log('server connected to PORT: 3000'))
+app.listen(3000,()=> console.log('server connected to PORT: 3000'))

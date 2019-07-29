@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "npm start"
   },
   "author": "pseudorandom_guy",
   "license": "ISC",
@@ -15,9 +15,7 @@
     "express": "^4.17.1",
     "open": "^6.3.0",
     "request": "^2.88.0",
-    "selenium-webdriver": "^4.0.0-alpha.1"
-  },
-  "engines": {
-    "node": "11.9.0"
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "xvfb": "^0.2.3"
   }
 }
