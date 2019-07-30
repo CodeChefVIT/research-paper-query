@@ -75,7 +75,7 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
                 var $ = cheerio.load(html)
                 
                 var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
-                console.log(value================== saveButtonVal)
+                console.log(`value================== ${saveButtonVal}`)
                 
                 // var len = saveButtonVal.length
                 // var downloadLink = saveButtonVal.substring(15,len-1)
