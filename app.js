@@ -72,7 +72,8 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
             
             var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
             var len = saveButtonVal.length
-            var downloadLink = saveButtonVal.substring(15,len-1)
+            var downloadLink = saveButtonVal.substring(15,len-15)
+            console.log(downloadLink)
             open(downloadLink)
 
         }
