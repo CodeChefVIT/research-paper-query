@@ -76,7 +76,7 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
                 
                 var len = saveButtonVal.length
                 var downloadLink = saveButtonVal.substring(15,len-1)
-        
+                console.log(`download link:::::::::::::: ${downloadLink}`)
                 open(downloadLink)
             }
             else{
