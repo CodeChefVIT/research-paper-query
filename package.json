@@ -1,6 +1,6 @@
 {
-  "name": "research_paper_query",
-  "version": "3.0.0",
+  "name": "research-paper-query",
+  "version": "1.0.0",
   "description": "An app and a website to fetch and download research papers based on user demand. Research papers need to be IEEE and can be fetched from websites like Scihub.",
   "main": "app.js",
   "scripts": {
@@ -18,5 +18,18 @@
   },
   "engines": {
     "node": "11.9.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subhrapaladhi/research-paper-query.git"
+  },
+  "keywords": [
+    "IEEE",
+    "research",
+    "papers"
+  ],
+  "bugs": {
+    "url": "https://github.com/subhrapaladhi/research-paper-query/issues"
+  },
+  "homepage": "https://github.com/subhrapaladhi/research-paper-query#readme"
 }
