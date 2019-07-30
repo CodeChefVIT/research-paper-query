@@ -73,11 +73,10 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
 
     request(url, (err, res, html) => {
         
-        setTimeout(() => {
             if(!err && res.statusCode==200){
         
                 var $ = cheerio.load(html)
-                
+                console.log($)
                 var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
                 var len = saveButtonVal.length
                 var downloadLink = saveButtonVal.substring(15,len-1)
@@ -89,8 +88,12 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
             else{
                 open(url)
             }
-            
-        }, 5000);
+
+            // async function f(){
+            //     let promise = new Promise((resolve, reject) => {
+
+            //     })
+            // }
         
     })
 
