@@ -3,8 +3,8 @@ var express         = require("express"),
     bodyParser      = require("body-parser"),
     open            = require("open"),
     app             = express(),
-    {Builder, By}   = require("selenium-webdriver")
-    var Xvfb = require('xvfb');
+    cheerio         = require('cheerio')
+
 app.use(bodyParser.urlencoded({extended: true}))
 
 var publicDir = require('path').join(__dirname,'/public');
@@ -65,29 +65,21 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
     var url = `http://sci-hub.tw/${doi}`
 
-    
-var xvfb = new Xvfb();
-xvfb.startSync();
- 
-// code that uses the virtual frame buffer here
- 
+    request(url, (err, res, html) => {
+        if(!err && res.statusCode==200){
+            var $ = cheerio.load(html)
+            
+            var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
+            var len = saveButtonVal.length
+            var downloadLink = saveButtonVal.substring(15,len-1)
+            open(downloadLink)
 
-// the Xvfb is stopped
-
-    var driver = new Builder()
-            .forBrowser('chrome')
-            .build()
-    driver.get(url)
-        .then(() => {
-            driver.findElement(By.partialLinkText('save')).click()
-            xvfb.stopSync();
-        })
-        .catch((err) => {
+        }
+        else{
             open(url)
-            res.redirect('/articles')
-            xvfb.stopSync();
-        })
-        res.redirect(`/articles/${doi}`)
+        }
+    })
+
 })
 
 app.listen(3000,()=> console.log('server connected to PORT: 3000'))
