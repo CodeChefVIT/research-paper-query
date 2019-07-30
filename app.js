@@ -68,31 +68,32 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     // ( async () => {
     //     // await open(url)    
     // })    
+
     console.log(`the url is :::::::::: ${url}`)
 
-    // request(url, (err, res, html) => {
+    request(url, (err, res, html) => {
         
-    //     setTimeout(() => {
-    //         if(!err && res.statusCode==200){
+        setTimeout(() => {
+            if(!err && res.statusCode==200){
         
-    //             var $ = cheerio.load(html)
+                var $ = cheerio.load(html)
                 
-    //             var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
-    //             var len = saveButtonVal.length
-    //             var downloadLink = saveButtonVal.substring(15,len-1)
+                var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
+                var len = saveButtonVal.length
+                var downloadLink = saveButtonVal.substring(15,len-1)
                 
-    //             console.log(downloadLink)
-    //             open(downloadLink)
+                console.log(`the url is ========= ${downloadLink}`)
+                // open(downloadLink)
     
-    //         }
-    //         else{
-    //             open(url)
-    //         }
+            }
+            else{
+                open(url)
+            }
             
-    //     }, 5000);
+        }, 5000);
         
-    // })
+    })
 
 })
 
-app.listen(port,()=> console.log(`server connected to PORT: ${port}`))
+app.listen(port,()=> console.log(`server connected to PORT:::::::::::: ${port}`))
