@@ -67,20 +67,26 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     var url = `http://sci-hub.tw/${doi}`
 
     request(url, (err, res, html) => {
-        if(!err && res.statusCode==200){
-            var $ = cheerio.load(html)
+        
+        setTimeout(() => {
+            if(!err && res.statusCode==200){
+        
+                var $ = cheerio.load(html)
+                
+                var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
+                var len = saveButtonVal.length
+                // var downloadLink = saveButtonVal.substring(15,len-1)
+                var downloadLink = 'https://www.google.com/'
+                console.log(downloadLink)
+                open(downloadLink)
+    
+            }
+            else{
+                open(url)
+            }
             
-            var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
-            var len = saveButtonVal.length
-            // var downloadLink = saveButtonVal.substring(15,len-1)
-            var downloadLink = 'https://www.google.com/'
-            console.log(downloadLink)
-            open(downloadLink)
-
-        }
-        else{
-            open(url)
-        }
+        }, 5000);
+        
     })
 
 })
