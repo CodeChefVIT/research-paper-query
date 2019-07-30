@@ -3,7 +3,8 @@ var express         = require("express"),
     bodyParser      = require("body-parser"),
     open            = require("open"),
     app             = express(),
-    cheerio         = require('cheerio')
+    cheerio         = require('cheerio'),
+    port            = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -82,4 +83,4 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
 
 })
 
-app.listen(3000,()=> console.log('server connected to PORT: 3000'))
+app.listen(port,()=> console.log(`server connected to PORT: ${port}`))
