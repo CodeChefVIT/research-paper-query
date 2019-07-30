@@ -5,17 +5,16 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm start"
+    "start": "node app.js"
   },
   "author": "pseudorandom_guy",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
     "ejs": "^2.6.1",
     "express": "^4.17.1",
     "open": "^6.3.0",
-    "request": "^2.88.0",
-    "selenium-webdriver": "^4.0.0-alpha.1",
-    "xvfb": "^0.2.3"
+    "request": "^2.88.0"
   }
 }
