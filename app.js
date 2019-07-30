@@ -66,7 +66,7 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
     var url = `http://sci-hub.tw/${doi}`
     ( async () => {
-        await open(url)    
+        // await open(url)    
     })    
     console.log(`the url is :::::::::: ${url}`)
 
