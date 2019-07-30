@@ -62,11 +62,11 @@ app.get('/articles/:doiPart1/:doiPart2', (req,res) => {
 })
 
 app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
-    // the doi is recieved in two parameters as the doi is to the form part1/part2
-    // var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
-    // var url = `http://sci-hub.tw/${doi}`
-    // open(url)    
-    console.log('hey you how are you !!!!!!!!!!!!!!!!!!!')
+    the doi is recieved in two parameters as the doi is to the form part1/part2
+    var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
+    var url = `http://sci-hub.tw/${doi}`
+    open(url)    
+    console.log(`the url is :::::::::: ${url}`)
 
     // request(url, (err, res, html) => {
         
