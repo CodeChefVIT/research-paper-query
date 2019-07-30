@@ -66,8 +66,6 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
     var url = `http://sci-hub.tw/${doi}`
 
-    // console.log(`the url is :::::::::: ${url}`)
-
     request(url, (err, res, html) => {
         
             if(!err && res.statusCode==200){
@@ -75,13 +73,11 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
                 var $ = cheerio.load(html)
                 
                 var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
-                console.log(`value================== ${saveButtonVal}`)
                 
-                // var len = saveButtonVal.length
-                // var downloadLink = saveButtonVal.substring(15,len-1)
-                
-                // console.log(`the url is ========= ${downloadLink}`)
-                // open(downloadLink)
+                var len = saveButtonVal.length
+                var downloadLink = saveButtonVal.substring(15,len-1)
+        
+                open(downloadLink)
             }
             else{
                 open(url)
