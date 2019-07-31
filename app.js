@@ -72,7 +72,7 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
         
                 var $ = cheerio.load(html)
                 
-                var saveButtonVal = $('#article iframe').attr('src')
+                var saveButtonVal = $('#article iframe')
                 // .attr('onclick')
                 console.log(`button::::::::::::::: ${saveButtonVal}`)
                 // var len = saveButtonVal.length
