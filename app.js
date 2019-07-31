@@ -66,24 +66,24 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
     var url = `http://sci-hub.tw/${doi}`
     console.log(`url::::::::::::::::::: ${url}`)
-    // request(url, (err, res, html) => {
+    request(url, (err, res, html) => {
         
-    //         if(!err && res.statusCode==200){
+            if(!err && res.statusCode==200){
         
-    //             var $ = cheerio.load(html)
+                var $ = cheerio.load(html)
                 
-    //             var saveButtonVal = $('#buttons ul li:nth-child(2) a')
-    //             // .attr('onclick')
-    //             console.log(`button::::::::::::::: ${saveButtonVal}`)
-    //             // var len = saveButtonVal.length
-    //             // var downloadLink = saveButtonVal.substring(15,len-1)
-    //             // console.log(`download link:::::::::::::: ${downloadLink}`)
-    //             // open(downloadLink)
-    //         }
-    //         else{
-    //             open(url)
-    //         }
-    // })
+                var saveButtonVal = $('#buttons ul li:nth-child(2) a')
+                // .attr('onclick')
+                console.log(`button::::::::::::::: ${saveButtonVal}`)
+                // var len = saveButtonVal.length
+                // var downloadLink = saveButtonVal.substring(15,len-1)
+                // console.log(`download link:::::::::::::: ${downloadLink}`)
+                // open(downloadLink)
+            }
+            else{
+                console.log('---------------error-----------------')
+            }
+    })
 
 })
 
