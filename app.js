@@ -72,13 +72,12 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
         
                 var $ = cheerio.load(html)
                 
-                var saveButtonVal = $('#article iframe')
-                // .attr('onclick')
-                console.log(`button::::::::::::::: ${saveButtonVal.html()}`)
-                // var len = saveButtonVal.length
-                // var downloadLink = saveButtonVal.substring(15,len-1)
-                // console.log(`download link:::::::::::::: ${downloadLink}`)
-                // open(downloadLink)
+                var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
+                
+                var len = saveButtonVal.length
+                var downloadLink = saveButtonVal.substring(15,len-1)
+                console.log(`download link:::::::::::::: ${downloadLink}`)
+                open(downloadLink)
             }
             else{
                 console.log('---------------error-----------------')
