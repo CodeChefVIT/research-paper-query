@@ -65,14 +65,14 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     // the doi is recieved in two parameters as the doi is to the form part1/part2
     var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
     var url = `http://sci-hub.tw/${doi}`
-    console.log(`url::::::::::::::::::: ${url}`)
+    
     request(url, (err, res, html) => {
         
             if(!err && res.statusCode==200){
         
                 var $ = cheerio.load(html)
                 
-                var saveButtonVal = $('#buttons ul li:nth-child(2) a')
+                var saveButtonVal = $('#article iframe').attr('src')
                 // .attr('onclick')
                 console.log(`button::::::::::::::: ${saveButtonVal}`)
                 // var len = saveButtonVal.length
