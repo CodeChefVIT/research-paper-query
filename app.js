@@ -65,7 +65,7 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
     // the doi is recieved in two parameters as the doi is to the form part1/part2
     var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
     var url = `http://sci-hub.tw/${doi}`
-    res.render('articles.ejs', {'articles': articleList, 'searchTerm': searchTerm, 'found': found})
+    console.log(`url::::::::::::::::::: ${url}`)
     // request(url, (err, res, html) => {
         
     //         if(!err && res.statusCode==200){
