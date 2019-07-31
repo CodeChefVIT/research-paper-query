@@ -74,7 +74,7 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
                 
                 var saveButtonVal = $('#article iframe')
                 // .attr('onclick')
-                console.log(`button::::::::::::::: ${saveButtonVal}`)
+                console.log(`button::::::::::::::: ${saveButtonVal.html()}`)
                 // var len = saveButtonVal.length
                 // var downloadLink = saveButtonVal.substring(15,len-1)
                 // console.log(`download link:::::::::::::: ${downloadLink}`)
