@@ -61,7 +61,7 @@ app.get('/articles/:doiPart1/:doiPart2', (req,res) => {
     })
 })
 
-app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
+app.get('/articles/:doiPart1/:doiPart2/download', (req,resp) => {
     // the doi is recieved in two parameters as the doi is to the form part1/part2
     var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
     var url = `http://sci-hub.tw/${doi}`
@@ -76,14 +76,16 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
                 
                 var len = saveButtonVal.length
                 var downloadLink = saveButtonVal.substring(15,len-1)
+                
                 console.log(`download link:::::::::::::: ${downloadLink}`)
-                open(downloadLink)
+    
+                resp.render('download.ejs',{'downloadLink':downloadLink})
+
             }
             else{
                 console.log('---------------error-----------------')
             }
     })
-
 })
 
 app.listen(port,()=> console.log(`server connected to PORT:::::::::::: ${port}`))
