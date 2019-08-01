@@ -1,7 +1,6 @@
 var express         = require("express"),
     request         = require("request"),
     bodyParser      = require("body-parser"),
-    open            = require("open"),
     app             = express(),
     cheerio         = require('cheerio'),
     port            = process.env.PORT || 3000
