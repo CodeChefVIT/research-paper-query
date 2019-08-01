@@ -1,9 +1,9 @@
 var express         = require("express"),
     request         = require("request"),
     bodyParser      = require("body-parser"),
-    open            = require("open"),
     app             = express(),
-    cheerio         = require('cheerio')
+    cheerio         = require('cheerio'),
+    port            = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -60,26 +60,31 @@ app.get('/articles/:doiPart1/:doiPart2', (req,res) => {
     })
 })
 
-app.get('/articles/:doiPart1/:doiPart2/download', (req,res) => {
+app.get('/articles/:doiPart1/:doiPart2/download', (req,resp) => {
     // the doi is recieved in two parameters as the doi is to the form part1/part2
     var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
     var url = `http://sci-hub.tw/${doi}`
-
+    
     request(url, (err, res, html) => {
-        if(!err && res.statusCode==200){
-            var $ = cheerio.load(html)
-            
-            var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
-            var len = saveButtonVal.length
-            var downloadLink = saveButtonVal.substring(15,len-1)
-            open(downloadLink)
+        
+            if(!err && res.statusCode==200){
+        
+                var $ = cheerio.load(html)
+                
+                var saveButtonVal = $('#buttons ul li:nth-child(2) a').attr('onclick')
+                
+                var len = saveButtonVal.length
+                var downloadLink = saveButtonVal.substring(15,len-1)
+                
+                console.log(`download link:::::::::::::: ${downloadLink}`)
+    
+                resp.render('download.ejs',{'downloadLink':downloadLink})
 
-        }
-        else{
-            open(url)
-        }
+            }
+            else{
+                console.log('---------------error-----------------')
+            }
     })
-
 })
 
-app.listen(3000,()=> console.log('server connected to PORT: 3000'))
+app.listen(port,()=> console.log(`server connected to PORT:::::::::::: ${port}`))
