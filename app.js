@@ -59,19 +59,20 @@ app.get('/articles/:doiPart1/:doiPart2', (req,res) => {
 
     articleList.forEach((article) => {
         if(article.doi == doi){
-            res.render('showArticle.ejs', {article: article})
+            // res.render('showArticle.ejs', {article: article})
+            res.json({article: article})
         }
     })
 })
 
-app.get('/articles/:doiPart1/:doiPart2/download', (req,resp) => {
+app.get('/articles/:doiPart1/:doiPart2/download', (req,res1) => {
     // the doi is recieved in two parameters as the doi is to the form part1/part2
     var doi = `${req.params.doiPart1}/${req.params.doiPart2}`            
     var url = `http://sci-hub.tw/${doi}`
     
-    request(url, (err, res, html) => {
+    request(url, (err, res2, html) => {
         
-            if(!err && res.statusCode==200){
+            if(!err && res2.statusCode==200){
         
                 var $ = cheerio.load(html)
                 
@@ -82,7 +83,7 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,resp) => {
                 
                 console.log(`download link:::::::::::::: ${downloadLink}`)
     
-                resp.render('download.ejs',{'downloadLink':downloadLink})
+                res1.json({'downloadLink':downloadLink})
 
             }
             else{
