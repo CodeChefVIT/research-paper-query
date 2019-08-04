@@ -47,7 +47,11 @@ app.post('/', (req,res) => {
 })
 
 app.get('/articles', (req,res) => {
-    res.render('articles.ejs', {'articles': articleList, 'searchTerm': searchTerm, 'found': found})
+    
+    let myresponse = {'articles': articleList, 'searchTerm': searchTerm, 'found': found}
+
+    res.json(myresponse)
+
 })
 
 app.get('/articles/:doiPart1/:doiPart2', (req,res) => {
