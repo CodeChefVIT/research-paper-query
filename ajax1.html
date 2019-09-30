@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax External Api</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        tr td:nth-child(2) {
+            width: 70px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="button">Load Github Users</button>
+    <br>
+    <br>
+    <h1>Github Users</h1>
+    <table id="Table"></table>
+    </table>
+
+    <script>
+        document.getElementById("button").addEventListener('click', loadUsers);
+
+        function loadUsers() {
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', 'https://api.github.com/users', true);
+
+            xhr.onload = function () {
+                if (this.status == 200) {
+                    var users = JSON.parse(this.responseText);
+                    if (users.length > 0) {
+                        var table = document.getElementById("Table");
+                        var head = '<tr>' + '<th>UserName</th>' + '<th>Profile-Image</th>' + '<th>Profile-Link</th>' + '</tr>';
+                        table.innerHTML += head;
+                        var each_val = ''
+                        for (i in users) {
+                            each_val = '<tr><td>' + users[i].login +
+                                '</td><td>' + '<img src="' + users[i].avatar_url + '"width=70 height=70></td>' +
+                                '<td>' + '<a href=' + `'${users[i].html_url}'` + '>' + `${users[i].login}'s Profile` + '</a></td></tr>';
+                            table.innerHTML += each_val;
+                        }
+                    }
+                }
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>
