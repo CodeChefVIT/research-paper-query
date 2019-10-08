@@ -13,6 +13,7 @@
     "cheerio": "^1.0.0-rc.3",
     "ejs": "^2.6.1",
     "express": "^4.17.1",
+    "open": "^6.3.0",
     "request": "^2.88.0"
   },
   "engines": {

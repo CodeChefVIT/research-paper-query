@@ -1,6 +1,7 @@
 var express         = require("express"),
     request         = require("request"),
     bodyParser      = require("body-parser"),
+    open            = require("open"),
     app             = express(),
     cheerio         = require('cheerio'),
     port            = process.env.PORT || 3000
@@ -24,7 +25,7 @@ app.get('/', (req,res) => {
 app.post('/', (req,res) => {        
     searchTerm = req.body.articleName
     if(searchTerm!=''){
-        var apiUrl = `http://ieeexploreapi.ieee.org/api/v1/search/articles?apikey=9bhdjqu9tzebjdm5xjr9p6xw&format=json&max_records=10&start_record=1&sort_order=asc&sort_field=article_number&abstract=${searchTerm}`
+        var apiUrl = `http://ieeexploreapi.ieee.org/api/v1/search/articles?apikey=<your api key>&format=json&max_records=10&start_record=1&sort_order=asc&sort_field=article_number&abstract=${searchTerm}`
         request(apiUrl, (error, response, resBody) => {
             found = false
             if(!error && response.statusCode==200){
@@ -47,11 +48,7 @@ app.post('/', (req,res) => {
 })
 
 app.get('/articles', (req,res) => {
-    
-    let myresponse = {'articles': articleList, 'searchTerm': searchTerm, 'found': found}
-
-    res.json(myresponse)
-
+    res.render('articles.ejs', {'articles': articleList, 'searchTerm': searchTerm, 'found': found})
 })
 
 app.get('/articles/:doiPart1/:doiPart2', (req,res) => {
@@ -59,8 +56,7 @@ app.get('/articles/:doiPart1/:doiPart2', (req,res) => {
 
     articleList.forEach((article) => {
         if(article.doi == doi){
-            // res.render('showArticle.ejs', {article: article})
-            res.json({article: article})
+            res.render('showArticle.ejs', {article: article})
         }
     })
 })
@@ -81,15 +77,13 @@ app.get('/articles/:doiPart1/:doiPart2/download', (req,res1) => {
                 var len = saveButtonVal.length
                 var downloadLink = saveButtonVal.substring(15,len-1)
                 
-                console.log(`download link:::::::::::::: ${downloadLink}`)
-    
-                res1.json({'downloadLink':downloadLink})
-
+                res1.render('download.ejs',{downloadLink : downloadLink})
             }
             else{
                 console.log('---------------error-----------------')
             }
     })
+
 })
 
 app.listen(port,()=> console.log(`server connected to PORT:::::::::::: ${port}`))

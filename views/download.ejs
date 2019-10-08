@@ -1,5 +1,12 @@
-<a id="link" href="<%= downloadLink %>"> downloadLink </a>
+<% include partials/header.ejs%>
+
+<div class="ui container" style="text-align: center; font-size: 50px; color: black;">
+    <a id="link" href="<%= downloadLink %>"> downloadLink </a>
+</div>
+
 
 <script>
     window.onload = function(){ document.getElementById("link").click() }
 </script>
+
+<%include partials/footer.ejs%>

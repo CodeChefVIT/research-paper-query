@@ -4,7 +4,6 @@ An app and a website to fetch and download [IEEE](https://developer.ieee.org/) r
 
 ### Team members
   * Subhra Paladhi(web app) [![linkedIn](https://img.shields.io/badge/contact%20me-linkedIn-green.svg?style=for-the-badge&logo=appveyor)](https://www.linkedin.com/in/subhra-paladhi-946aaa137/)
-  * Ishitva (app) 
 
 ### Frameworks, libraries and programming languages used
   * HTML5
